@@ -4,6 +4,8 @@ public class Ball : MonoBehaviour
 {
     [SerializeField] private float _maxHealth = 5;
     [SerializeField] private Vector3 _startingPosition;
+    [SerializeField] private ParticleSystem _deathEffect;
+
     private Rigidbody _rigidbody;
     private float _currentHealth;
 
@@ -12,9 +14,10 @@ public class Ball : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        Restart();
     }
 
-    public bool IsOnTheGround {  get; private set; }
+    public bool IsOnTheGround { get; private set; }
 
     private void OnCollisionStay(Collision collision)
     {
@@ -51,6 +54,16 @@ public class Ball : MonoBehaviour
         _currentHealth -= damage;
 
         if (_currentHealth < 0)
+        {
             _currentHealth = 0;
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        _deathEffect.transform.position = _rigidbody.position;
+        _deathEffect.Play();
+        Stop();
     }
 }

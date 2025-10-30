@@ -29,6 +29,9 @@ public class Game : MonoBehaviour
 
         if (_timer.TimeValue <= 0)
             Loose();
+
+        if (_ball.CurrentHealth == 0)
+            Loose();
     }
 
     private void Win()
@@ -41,6 +44,7 @@ public class Game : MonoBehaviour
     private void Loose()
     {
         Debug.Log(_looseText);
+        _timer.Stop();
         _ball.Stop();
     }
 

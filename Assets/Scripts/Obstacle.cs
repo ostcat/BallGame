@@ -18,8 +18,11 @@ public class Obstacle : MonoBehaviour
     {
         Ball ball = collision.gameObject.GetComponent<Ball>();
 
-        if (ball != null) 
+        if (ball != null)
+        {
+            _collisionEffect.Play();
             TakeDamageTo(ball);
+        }
     }
 
     private void OnCollisionStay(Collision collision)
@@ -50,5 +53,16 @@ public class Obstacle : MonoBehaviour
             _collisionEffect.Stop();
 
         _time = 0;
+    }
+
+    private void OnCollisionExit(Collision collision)
+    {
+        Ball ball = collision.gameObject.GetComponent<Ball>();
+
+        if(ball != null)
+        {
+            _collisionEffect.Stop();
+            _time = 0;
+        }
     }
 }
