@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Coin : MonoBehaviour
@@ -16,5 +14,10 @@ public class Coin : MonoBehaviour
             _wallet.AddMoney(_coinValue);
             gameObject.SetActive(false);
         }
+    }
+
+    public void Reset()
+    {
+        gameObject.SetActive(true);
     }
 }

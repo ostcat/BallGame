@@ -1,13 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoverByInput : MonoBehaviour
 {
     private const string HorizontalAxis = "Horizontal";
     private const string VerticalAxis = "Vertical";
-    private Rigidbody _rigidbody;
     [SerializeField] private float _force = 50;
+
+    private Rigidbody _rigidbody;
+  
     private float _deadZone = 0.05f;
     private float _xInput;
     private float _zInput;

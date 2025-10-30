@@ -10,14 +10,13 @@ public class Ball : MonoBehaviour
     private float _currentHealth;
 
     public float CurrentHealth => _currentHealth;
+    public bool IsOnTheGround { get; private set; }
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         Restart();
     }
-
-    public bool IsOnTheGround { get; private set; }
 
     private void OnCollisionStay(Collision collision)
     {

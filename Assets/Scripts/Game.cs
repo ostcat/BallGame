@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using UnityEngine;
 
 public class Game : MonoBehaviour
@@ -8,9 +6,9 @@ public class Game : MonoBehaviour
     [SerializeField] Ball _ball;
     [SerializeField] Timer _timer;
     [SerializeField] Wallet _wallet;
-    [SerializeField] int _totalCoinsNumber;
     [SerializeField] string _winText = "Вы выйграли, поздравляем!";
     [SerializeField] string _looseText = "К сожалению, вы проиграли";
+    [SerializeField] List<Coin> _coins;
 
     private KeyCode _restartKeyCode = KeyCode.R;
 
@@ -19,12 +17,13 @@ public class Game : MonoBehaviour
         _timer.ResetTimer();
         _timer.StartTimer();
     }
+
     private void Update()
     {
         if (Input.GetKey(_restartKeyCode))
             Restart();
 
-        if (_wallet.CoinsNumber >= _totalCoinsNumber)
+        if (_wallet.CoinsNumber >= (_coins.Count))
             Win();
 
         if (_timer.TimeValue <= 0)
@@ -54,5 +53,8 @@ public class Game : MonoBehaviour
         _timer.ResetTimer();
         _timer.StartTimer();
         _wallet.Reset();
+
+        foreach (var coin in _coins)
+            coin.Reset();
     }
 }

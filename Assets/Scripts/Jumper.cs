@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Jumper : MonoBehaviour
 {
     private Rigidbody _rigidbody;
     private Ball _ball;
-
     private KeyCode _jumpKey = KeyCode.Space;
+
     [SerializeField] private float _jumpForce;
 
     private void Awake()
@@ -24,7 +22,4 @@ public class Jumper : MonoBehaviour
         if (Input.GetKey(_jumpKey))
             _rigidbody.AddForce(Vector3.up * _jumpForce * Time.deltaTime, ForceMode.Impulse);
     }
-
-   
-
 }
