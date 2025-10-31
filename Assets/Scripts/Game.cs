@@ -6,6 +6,8 @@ public class Game : MonoBehaviour
     [SerializeField] Ball _ball;
     [SerializeField] Timer _timer;
     [SerializeField] Wallet _wallet;
+    [SerializeField] CoinsHolder _coinsHolder;
+
     [SerializeField] string _winText = "Вы выйграли, поздравляем!";
     [SerializeField] string _looseText = "К сожалению, вы проиграли";
     [SerializeField] List<Coin> _coins;
@@ -23,7 +25,7 @@ public class Game : MonoBehaviour
         if (Input.GetKey(_restartKeyCode))
             Restart();
 
-        if (_wallet.CoinsNumber >= (_coins.Count))
+        if (_wallet.CoinsNumber >= (_coinsHolder.Coins.Count))
             Win();
 
         if (_timer.TimeValue <= 0)

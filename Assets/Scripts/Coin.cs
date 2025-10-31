@@ -2,22 +2,15 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    [SerializeField] private int _coinValue = 10;
-    [SerializeField] private Wallet _wallet;
-
-    private void OnTriggerEnter(Collider other)
-    {
-        Ball ball = other.GetComponent<Ball>();
-
-        if (ball != null)
-        {
-            _wallet.AddMoney(_coinValue);
-            gameObject.SetActive(false);
-        }
-    }
-
+    [SerializeField] public int CoinValue { get; private set; } = 10; 
+   
     public void Reset()
     {
         gameObject.SetActive(true);
+    }
+
+    public void StopCoin()
+    {
+        gameObject.SetActive(false);
     }
 }

@@ -12065,7 +12065,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaccd7880fdd26c4ba1165705e65d387, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpForce: 200
+  _jumpForce: 10
 --- !u!114 &646541581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42420,7 +42420,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerText: {fileID: 597850868}
-  _timerDuration: 20
+  _timerDuration: 60
 --- !u!4 &1534223434
 Transform:
   m_ObjectHideFlags: 0

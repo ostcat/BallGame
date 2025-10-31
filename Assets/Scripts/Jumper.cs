@@ -5,6 +5,7 @@ public class Jumper : MonoBehaviour
     private Rigidbody _rigidbody;
     private Ball _ball;
     private KeyCode _jumpKey = KeyCode.Space;
+    private bool _isJumping = false;
 
     [SerializeField] private float _jumpForce;
 
@@ -18,8 +19,17 @@ public class Jumper : MonoBehaviour
     {
         if (_ball.IsOnTheGround == false)
             return;
-       
-        if (Input.GetKey(_jumpKey))
-            _rigidbody.AddForce(Vector3.up * _jumpForce * Time.deltaTime, ForceMode.Impulse);
+
+        if (Input.GetKeyDown(_jumpKey))
+            _isJumping = true;
+    }
+
+    private void FixedUpdate()
+    {
+        if (_isJumping)
+        {
+            _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
+            _isJumping = false;
+        }
     }
 }
