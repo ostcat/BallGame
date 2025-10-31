@@ -59,7 +59,7 @@ public class Obstacle : MonoBehaviour
     {
         Ball ball = collision.gameObject.GetComponent<Ball>();
 
-        if(ball != null)
+        if (ball != null)
         {
             _collisionEffect.Stop();
             _time = 0;

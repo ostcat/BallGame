@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CoinsHolder : MonoBehaviour
 {
-     public List<Coin> Coins { get; private set; }
+    public List<Coin> Coins { get; private set; }
 
     private void Awake()
     {

@@ -11969,6 +11969,7 @@ GameObject:
   - component: {fileID: 646541579}
   - component: {fileID: 646541580}
   - component: {fileID: 646541581}
+  - component: {fileID: 646541582}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Untagged
@@ -12018,7 +12019,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!135 &646541578
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -12081,6 +12082,19 @@ MonoBehaviour:
   _maxHealth: 3
   _startingPosition: {x: -12, y: 1.56, z: -18}
   _deathEffect: {fileID: 972259633}
+--- !u!114 &646541582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646541575}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e39c2f30f3b677244aafc7870d7a70e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wallet: {fileID: 1213071844}
 --- !u!1001 &651848058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12385,8 +12399,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &671634778
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17927,8 +17939,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &821147238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19043,6 +19053,7 @@ MonoBehaviour:
   _ball: {fileID: 646541581}
   _timer: {fileID: 1534223433}
   _wallet: {fileID: 1213071844}
+  _coinsHolder: {fileID: 1367045579}
   _winText: "\u0412\u044B \u0432\u044B\u0439\u0433\u0440\u0430\u043B\u0438, \u043F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   _looseText: "\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u0432\u044B
     \u043F\u0440\u043E\u0438\u0433\u0440\u0430\u043B\u0438"
@@ -24288,8 +24299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1 &1091022643 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4ab1869877381f64f998c72763ff2229,
@@ -35197,8 +35206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1287858085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40678,8 +40685,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1 &1367045577
 GameObject:
   m_ObjectHideFlags: 0
@@ -40689,8 +40694,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1367045578}
+  - component: {fileID: 1367045579}
   m_Layer: 0
-  m_Name: Stars
+  m_Name: Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40726,6 +40732,18 @@ Transform:
   - {fileID: 977061360}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1367045579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367045577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42f44381aa252c240b3b1919f002a42f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1368974046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41110,8 +41128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1387380167
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41330,8 +41346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1418933830
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41646,8 +41660,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1443664798
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42420,7 +42432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timerText: {fileID: 597850868}
-  _timerDuration: 60
+  _timerDuration: 30
 --- !u!4 &1534223434
 Transform:
   m_ObjectHideFlags: 0
@@ -43002,8 +43014,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1633324254
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43771,8 +43781,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1775594003
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -48974,8 +48982,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1 &1835247645
 GameObject:
   m_ObjectHideFlags: 0
@@ -53989,8 +53995,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1898338215
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54295,8 +54299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1978552646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54429,8 +54431,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1992204181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54563,8 +54563,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e36ab672d1a62124aaf85fb62bcfcdeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _coinValue: 10
-  _wallet: {fileID: 1213071844}
 --- !u!1001 &1993240590
 PrefabInstance:
   m_ObjectHideFlags: 0
