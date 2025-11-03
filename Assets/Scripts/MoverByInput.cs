@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class MoverByInput : MonoBehaviour
 {
+    //в Ball формировать какой-нибудь вектор направления движения и передавать сюда через публичный метод
+    
     private const string HorizontalAxis = "Horizontal";
     private const string VerticalAxis = "Vertical";
     [SerializeField] private float _force = 50;

@@ -10,6 +10,6 @@ public class CoinsCollector : MonoBehaviour
             return;
 
         _wallet.AddMoney(coin.CoinValue);
-        coin.StopCoin();
+        coin.Collect();
     }
 }

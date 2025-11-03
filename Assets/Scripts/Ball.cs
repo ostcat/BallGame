@@ -3,11 +3,11 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     [SerializeField] private float _maxHealth = 5;
-    [SerializeField] private Vector3 _startingPosition;
     [SerializeField] private ParticleSystem _deathEffect;
 
     private Rigidbody _rigidbody;
     private float _currentHealth;
+    private Vector3 _startingPosition;
 
     public float CurrentHealth => _currentHealth;
     public bool IsOnTheGround { get; private set; }
@@ -15,6 +15,7 @@ public class Ball : MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _startingPosition = transform.position;
         Restart();
     }
 

@@ -10,7 +10,8 @@ public class Game : MonoBehaviour
 
     [SerializeField] string _winText = "Вы выйграли, поздравляем!";
     [SerializeField] string _looseText = "К сожалению, вы проиграли";
-    [SerializeField] List<Coin> _coins;
+
+    private bool _isRunning = true;
 
     private KeyCode _restartKeyCode = KeyCode.R;
 
@@ -25,38 +26,62 @@ public class Game : MonoBehaviour
         if (Input.GetKey(_restartKeyCode))
             Restart();
 
-        if (_wallet.CoinsNumber >= (_coinsHolder.Coins.Count))
+        if (_isRunning == false)
+            return;
+
+        if (_isWinning())
             Win();
 
-        if (_timer.TimeValue <= 0)
-            Loose();
-
-        if (_ball.CurrentHealth == 0)
+        if (_isLoosing())
             Loose();
     }
 
     private void Win()
     {
         Debug.Log(_winText);
-        _ball.Stop();
-        _timer.Stop();
+        Stop();
     }
 
     private void Loose()
     {
         Debug.Log(_looseText);
-        _timer.Stop();
+        Stop();
+    }
+
+    private bool _isLoosing()
+    {
+        if (_timer.TimeValue <= 0 || _ball.CurrentHealth == 0)
+            return true;
+
+        else
+            return false;
+    }
+
+    private bool _isWinning()
+    {
+        if (_wallet.CoinsNumber >= (_coinsHolder.Coins.Count))
+            return true;
+
+        else
+            return false;
+    }
+
+    private void Stop()
+    {
         _ball.Stop();
+        _timer.Stop();
+        _isRunning = false;
     }
 
     private void Restart()
     {
+        _isRunning = true;
         _ball.Restart();
         _timer.ResetTimer();
         _timer.StartTimer();
         _wallet.Reset();
 
-        foreach (var coin in _coins)
+        foreach (var coin in _coinsHolder.Coins)
             coin.Reset();
     }
 }
